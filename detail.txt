@@ -1,0 +1,12 @@
+settinig up parsers for a form 
+ app.use(express.json())
+ app.use(express.urlencoded({extended: true}))
+
+setting up ejs for ejs pages => npm i ejs
+                                setup ejs as a middleware for view engine   
+
+setting up public static file
+
+dynamic routes
+  dynamic routing
+  how to get data coming from the frontend at backend routs 

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Task Details</title>
+    <style>
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        /* Hover Effect for Task Card */
+        .task-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .task-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Back Button Hover */
+        .back-btn:hover {
+            transform: translateX(-3px);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+
+    <div class="container mx-auto min-h-screen flex flex-col items-center justify-center px-6 py-10 fade-in">
+
+        <!-- Back Button -->
+        <div class="w-full max-w-2xl">
+            <a href="/" class="text-blue-500 hover:text-blue-400 transition inline-flex items-center gap-2 back-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Task Content -->
+        <div class="w-full max-w-2xl bg-gray-800 p-6 rounded-lg shadow-lg mt-6 task-card fade-in">
+            <h1 class="text-3xl font-bold mb-4 text-blue-400"><%= filename.replace(".txt", "") %></h1>
+            <p class="text-lg text-gray-300 leading-relaxed"><%= filedata %></p>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

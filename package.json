@@ -1,0 +1,20 @@
+{
+  "name": "notepad-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoos": "^0.0.1-security",
+    "nodemon": "^3.1.9",
+    "react-icons": "^5.5.0"
+  }
+}
