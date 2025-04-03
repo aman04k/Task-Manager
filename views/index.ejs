@@ -70,8 +70,20 @@
           <% files.forEach(file => { %>
             <div class="relative bg-gray-800 p-5 rounded-lg shadow-lg task-card">
               <h3 class="text-lg font-semibold text-white"><%= file.replace(".txt", "") %></h3>
-              <a class="text-blue-400 inline-block mt-2 underline hover:text-blue-300 transition"
-                href="/files/<%= file %>">View Details</a>
+
+              <div class="flex justify-between items-center mt-4 space-x-4">
+                <a href="/files/<%= file %>" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition">
+                    View Details
+                </a>
+            
+                <a href="/edit/<%= file %>" 
+                   class="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-4 rounded-lg transition">
+                    Edit
+                </a>
+            </div>
+            
+              
               <button class="absolute top-3 right-3 text-red-500 hover:text-red-700 transition"
                 onclick="deleteTask('<%= file %>')">
                 <i data-lucide="trash"></i>

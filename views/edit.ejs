@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Task</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white flex items-center justify-center h-screen">
+
+  <div class="w-full max-w-md bg-gray-800 p-6 rounded-lg shadow-lg">
+    <h2 class="text-xl font-semibold mb-4 text-white">Edit Task</h2>
+    <form action="/update" method="post">
+      <input type="hidden" name="filename" value="<%= filename %>">
+      <textarea class="w-full p-3 rounded bg-gray-700 text-white" name="newDetail" rows="6"><%= filedata %></textarea>
+      <button type="submit"
+        class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-md">Update Task</button>
+    </form>
+    <a href="/" class="mt-2 inline-block text-blue-400 hover:text-blue-300">Back to Home</a>
+  </div>
+
+</body>
+</html>

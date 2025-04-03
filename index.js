@@ -47,6 +47,37 @@ app.post("/create", (req, res) => {
   });
 });
 
+// Edit a task (file)
+// Edit Task - Show Edit Page
+app.get("/edit/:filename", (req, res) => {
+  const filePath = path.join(filesDir, req.params.filename);
+
+  fs.readFile(filePath, "utf-8", (err, filedata) => {
+    if (err) {
+      console.error("Error reading file:", err);
+      return res.status(404).send("Task not found");
+    }
+    res.render("edit", { filename: req.params.filename, filedata });
+  });
+});
+
+// Handle Task Update
+app.post("/update", (req, res) => {
+  const { filename, newDetail } = req.body;
+  const filePath = path.join(filesDir, filename);
+
+  fs.writeFile(filePath, newDetail, (err) => {
+    if (err) {
+      console.error("Error updating file:", err);
+      return res.status(500).send("Error updating task");
+    }
+    res.redirect("/");
+  });
+});
+
+
+
+
 // View task details
 app.get("/files/:filename", (req, res) => {
   const filePath = path.join(filesDir, req.params.filename);
